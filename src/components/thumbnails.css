@@ -1,0 +1,9 @@
+.gallery ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .gallery ul li {
+    list-style: none;
+    
+  }
