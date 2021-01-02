@@ -5,7 +5,7 @@ import Image from './Image'
 
 function Thumbnails(thumbnails) {
   
-    var part = (thumbnails.data).slice(0,30)
+    var part = thumbnails.data
     return (
         <div className="gallery">
          <ul>
