@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
 import Thumbnails from './components/Thumbnails';
 import Image from './components/Image';
@@ -10,9 +10,9 @@ export default class App extends React.Component {
     data: []
   } 
 
+  //fetch data from api
   async componentDidMount() {
     const data = await (await fetch('https://jsonplaceholder.typicode.com/photos')).json()
-
     this.setState({data})
   }
 
@@ -26,8 +26,10 @@ export default class App extends React.Component {
 
       <Router>
         <Switch>
+          {/*route to thumbnails as home page*/}
           <Route exact path='/' render={
             (props) => <Thumbnails {...props} data={data}/>} />
+            {/*route to single image page*/}
           <Route path='/' render = { props => <Image {...props} data={data} />} />
         </Switch>
       </Router>

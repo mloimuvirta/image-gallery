@@ -1,16 +1,16 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import './image.css'
 
 
 function Image(props) {
     
     var id_ = (props.location.pathname).substring(1);
-    //src={props.data[id_-1].url}
+    
+
+    //set details to show when data is not 0
     if(props.data.length > 0) {
-        console.log("alla")
-        console.log(props.data)
-        console.log(props.data.length)
-        console.log("yllä")
+       
         var url_ = props.data[id_-1].url;
         var title_ = props.data[id_-1].title;
     }
@@ -20,10 +20,10 @@ function Image(props) {
         <div>
            
             <h1>{title_}</h1>
-            <img src={url_}></img>
+            <img src={url_} alt={title_}></img>
             <br></br>
             <Link to="/">
-            <button>takaisin</button>
+            <button>BACK</button>
             </Link>
         </div>
     )
